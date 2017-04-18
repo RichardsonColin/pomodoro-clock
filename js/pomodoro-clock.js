@@ -106,11 +106,6 @@ $(document).ready(function() {
     }
   });
 
-  // Disable the session and break buttons.
-  function disableButton() {
-    $(".time_down, .time_up, .break_down, .break_up").off("click");
-  }
-
   // Stars the timer using the play button.
   $(".start_btn").click(function() {
     if (id === true) {
@@ -194,5 +189,4 @@ $(document).ready(function() {
     $(".current").text("Session");
 
   });
-
 });
