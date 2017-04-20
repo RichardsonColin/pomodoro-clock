@@ -1,4 +1,6 @@
-$(document).ready(function() {
+
+
+$(document).ready(function() { 
 
   // Sets the base time for the session and break.
   var setSessionTime = 1500;
@@ -106,16 +108,17 @@ $(document).ready(function() {
     }
   });
 
+
   // Stars the timer using the play button.
   $(".start_btn").click(function() {
     if (id === true) {
-      tempTime = currentTime
+      tempTime = currentTime;
       id = setInterval(decrease, 1000);
       timeToggle = false;
     }
     // Conitnually decreases the displayed time using 'setInterval'.
     function decrease() {
-      if (currentTime == 0) {
+      if (currentTime === 0) {
         sound.play();
         $(".current").text(passActivity);
         // Changes from session to break and back again.
@@ -129,11 +132,11 @@ $(document).ready(function() {
             passActivity = "Break";
             break;
         }
-        $("#timer").text(secToTimeString(currentTime))
+        $("#timer").text(secToTimeString(currentTime));
       } else {
         //Reduces the displayed time by 1 second.
         currentTime--;
-        $("#timer").text(secToTimeString(currentTime))
+        $("#timer").text(secToTimeString(currentTime));
       }
       // Changes the colour of the time remaining.
       var timePercent = Math.floor((currentTime / setSessionTime) * 100);
@@ -152,7 +155,7 @@ $(document).ready(function() {
     clearInterval(id);
     id = true;
     tempTime = currentTime;
-    $("#timer").text(secToTimeString(currentTime))
+    $("#timer").text(secToTimeString(currentTime));
     timeToggle = true;
   });
 
